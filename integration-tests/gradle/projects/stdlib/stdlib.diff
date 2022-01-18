@@ -37,7 +37,7 @@ diff --git a/build.gradle b/build.gradle
 index aa8f21b..dd6a2ae 100644
 --- a/build.gradle
 +++ b/build.gradle
-@@ -1,80 +1,424 @@
+@@ -1,80 +1,425 @@
 +import org.jetbrains.dokka.Platform
 +
  plugins {
@@ -162,6 +162,7 @@ index aa8f21b..dd6a2ae 100644
 +    task dokkaStdlib(type: org.jetbrains.dokka.gradle.DokkaTask) {
 +        outputDirectory.set(new File(outputDir, "/kotlin-stdlib"))
 +        moduleName.set("kotlin-stdlib")
++        pluginsMapConfiguration.set(["org.jetbrains.dokka.base.DokkaBase": """{ "mergeNoExpectActualDeclarations": "true" }"""])
 +        dokkaSourceSets {
 +            register("kotlin-stdlib-common") {
 +                skipDeprecated.set(false)
